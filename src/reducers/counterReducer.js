@@ -1,13 +1,13 @@
 import {INCREASE, DECREASE} from '../actions/type';
 
-const initialState = {counter: 0, data: []};
+const initialState = 0;
 
 const counterReducer = (state=initialState, action) => {
     switch(action.type){
         case INCREASE:
-            return {...state, counter: state.counter + 1};
+            return state + 1;
         case DECREASE:
-            return {...state, counter: state.counter - 1};
+            return state - 1;
         default:
             return state;
     }

@@ -1,6 +1,6 @@
 import {UPDATE} from '../actions/type';
 
-const initialState = null;
+const initialState = [];
 
 const userListReducer = (state=initialState, action) => {
     switch(action.type){
@@ -14,14 +14,15 @@ const userListReducer = (state=initialState, action) => {
 
                     response.json().then(data => {
                         console.log("OK");
-                        return {...state, userList: data};
+                        console.log(data);
+                        return data;
                     });
                 })
                 .catch(err => {
                     console.log('Fetch Error: ', err);
                     return state;
                 });
-            break;
+            return state;
         }
         default:
             return state;
